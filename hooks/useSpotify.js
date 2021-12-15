@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { signIn, useSession } from 'next-auth/react';
-import spotifyAPi from '../lib/spotify'
+import SpotifyWebApi from 'spotify-web-api-node';
+
 
 
 const spotifyApi = new SpotifyWebApi({
@@ -25,7 +26,7 @@ function useSpotify() {
   }, [session]);
 
   // we only initialize the app once with spotifyAPI
-  return spotifyAPi;
+  return spotifyApi;
 }
 
 export default useSpotify

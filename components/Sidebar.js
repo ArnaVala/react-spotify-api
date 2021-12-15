@@ -1,3 +1,5 @@
+import { signOut, useSession } from "next-auth/react"
+import { useEffect, useState } from "react"
 import {
   HomeIcon,
   SearchIcon,
@@ -6,12 +8,22 @@ import {
   HeartIcon,
   RssIcon
 } from "@heroicons/react/outline"
-
-import { signOut, useSession } from "next-auth/react"
+import useSpotify from "../hooks/useSpotify";
   
 function Sidebar() {
+  const spotifyApi = useSpotify(); //get the playlist data from the custom HOOK 
   const { data: session, status } = useSession(); // wrap <SessionProvider/> in app.js
-  console.log(session);
+  //console.log(session);
+  const [playlists, setPlaylists] = useState([]);
+
+  useEffect(() => {
+    if (spotifyApi.getAccessToken()) {
+      spotifyApi.getUserPlaylists().then((data) => {
+        setPlaylists(data.items);
+      })
+    }
+  }, [session, spotifyApi])
+  
   return (
     <div className="text-gray-500 p-5 text-sm border-r border-gray-900 overflow-y-scroll scrollbar-hide h-screen">
       <div className="space-y-4">
