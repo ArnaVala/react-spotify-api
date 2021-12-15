@@ -9,6 +9,8 @@ import {
 } from "@heroicons/react/outline"
 import { signOut, useSession } from "next-auth/react"
 import { useEffect, useState } from "react"
+import { useRecoilState } from 'recoil';
+import { playlistIdState } from "../atoms/playlistAtom";
 import useSpotify from "../hooks/useSpotify";
   
 function Sidebar() {
@@ -16,7 +18,9 @@ function Sidebar() {
   const { data: session, status } = useSession(); // wrap <SessionProvider/> in app.js
   //console.log(session);
   const [playlists, setPlaylists] = useState([]);
-  const [playlistId, setPlaylistId] = useState(null);
+  const [playlistId, setPlaylistId] = useRecoilState(playlistIdState); // Replace with useRecoilState, and pass in the atom
+  //const [playlistId, setPlaylistId] = useState(null);
+  
   // get the data for the playList
   useEffect(() => { 
     if (spotifyApi.getAccessToken()) {

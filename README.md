@@ -2,10 +2,10 @@
 
 I really wanted to dig into NextJS with API's, to get a bit of a better understanding of state management, and how to handle user authentication in NextJS with middleware.
 <br>
-I did this project from a code-a-long with Sonny Sangha in [this tutorial](https://www.youtube.com/watch?v=3xrko3GpYoU&t=3571s) . Sonny is in my opinion one of the best online 'teachers' I have followed, with very comprehensive projects. He explains really well each step along the way, so that you actually get a very good understanding of the concepts, and what the functions/methods are doing. The projects he does are really high quality, and he really adhers to best practices
-<br>
-As this project covers a lot, I am using it for two projects:
-<br>
+I did this project from a code-a-long with Sonny Sangha in
+[this tutorial](https://www.youtube.com/watch?v=3xrko3GpYoU&t=3571s) .
+
+Sonny is in my opinion one of the best online 'teachers' I have followed, with very comprehensive projects. He explains really well each step along the way, so that you actually get a very good understanding of the concepts, and what the functions/methods are doing. The projects he does are really high quality, and he really adhers to best practices
 
 ### Stack used
 
@@ -14,13 +14,15 @@ I wanted to dive deep into understanding NextJS and Hooks - rather than styling,
 
 - Spotify API and spotify-web-api-node package
 - NextJS
-- Hooks, using Recoil
+- Hooks - UseEffect, useState and custom hooks such as useSpotify hook.
 - Next-auth for managing user authentication and Spotify API tokens, for login, and creating sessions to store and
 - Middleware for communicating and managing between the server-side and client side.
 - TailwindCSS for quick styling of the app.
 - Higher order components, pure components
-- UseEffect, useState and custom hooks such as useSpotify hook.
-- It uses array methods such as map(), filter(), find() to retrieve the data from the API and pass to the UI with user interaction.
+- [Recoil](https://recoiljs.org/) is for state managment library for react, <RecoilRoot> wrapped around our app-component, to store global state. It gives us the capability to get data from the global store, in whatever component we want. Recoil uses what it call Atoms, for the specific/contextual items in the store. (e.g. a playlist, song etc)
+- In my app I also use array methods such as map(), filter(), find() to retrieve the data from the API and pass to the UI with user interaction.
+
+# As this project covers a lot, I am using it for two projects:
 
 ## JavaScript/React - module 4:
 
