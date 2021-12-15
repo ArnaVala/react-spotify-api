@@ -2,8 +2,9 @@ import { useSession } from "next-auth/react"
 import { ChevronDownIcon } from "@heroicons/react/outline"
 import { useState, useEffect } from 'react'
 import { shuffle } from 'lodash' //for randomizing/shuffling colors
-import { useRecoilState, useRecoilValue } from 'recoil';
+import { useRecoilState, useRecoilValue } from 'recoil'
 import { playlistIdState, playlistState } from '../atoms/playlistAtom'
+import useSpotify from "../hooks/useSpotify"
 
 /* using randomized colors for the header component from the color array
 and use useEffect using string-interpolation in the className ${color} in the section
