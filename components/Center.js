@@ -1,8 +1,27 @@
 import { useSession } from "next-auth/react"
 import { ChevronDownIcon } from "@heroicons/react/outline"
 
+/* using randomized colors for the header component from the color array
+and use useEffect
+*/
+const colors = [
+  "from-indigo-500",
+  "from-blue-500",
+  "from-green-500",
+  "from-red-500",
+  "from-yellow-500",
+  "from-pink-500",
+  "from-purple-500"
+];
+
 function Center() {
-  const { data: session } = useSession();
+  const { data: session } = useSession(); // using the useSession hook for getting data
+  const [color, setColor] = useState(null); // creating a state for the changing colors in header
+  //initial state is none - as soon as we mount a random color will be rendered.
+  useEffect(() => {
+
+  })
+
   return (
     <div className="flex-grow">
       <header className="absolute top-5 right-8">
