@@ -17,24 +17,23 @@ I wanted to dive deep into understanding NextJS and Hooks - rather than styling,
 - Middleware and Next-auth
 - TailwindCSS for quick styling of the app.
 
-### NextAuth v4
+### NextAuth v4 / HOC / MIDDLEWARE
 
 - Documentation on [NextAuth](https://next-auth.js.org/getting-started/example#add-api-route)
 - Create a env.local file in the root folder and add the credentials.
 - In the .env.local file you need these keys. NEXTAUTH_URL needs to be changed when deployed.
   <br>
   NEXTAUTH_URL=http://localhost:3000
-  NEXT_PUBLIC_CLIENT_SECRET=your
-  NEXT_PUBLIC_CLIENT_ID=
+  NEXT_PUBLIC_CLIENT_SECRET=your_token_from_spotify
+  NEXT_PUBLIC_CLIENT_ID=your_token_from_spotify
   JWT_SECRET=secret_value_here
 
 _HOC - HIGHER ORDER COMPONENTs_
+SessionProvider from "next-auth/react" is an example of the use of a HOC component (Higher Order Component). The SessionProvider manages authentication and login states, and WRAPS OUR WHOLE SITE allowing the user to persist the logged in state navigating through the app.
 
-- SessionProvider from "next-auth/react" is an example of the use of a HOC component (Higher Order Component). The SessionProvider manages authentication and login states, and WRAPS OUR WHOLE SITE allowing the user to persist the logged in state navigating through the app.
+_MIDDLEWARE IN NEXT.JS 12_
+Middleware is integrated into NextJS 12, doesn't needed to be built.
 
-_MIDDLEWARE IN NEXT.JS_
-
-- Middleware is integrated into NextJS 12, doesn't needed to be built.
 - The middleware is still in beta, so there might be some breaking changes in the future.
 - The middleware functionality required so little code to work, and is a really awesome feature of NextJS 12.
 
