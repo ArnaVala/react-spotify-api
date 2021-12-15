@@ -35,6 +35,8 @@ _HOC - HIGHER ORDER COMPONENTs_
 _MIDDLEWARE IN NEXT.JS_
 
 - Middleware is integrated into NextJS 12, doesn't needed to be built.
+- The middleware is still in beta, so there might be some breaking changes in the future.
+- The middleware functionality required so little code to work, and is a really awesome feature of NextJS 12.
 
 ### Learning about NVM to control what node version you are running on when installing dependencies in your projects.
 
