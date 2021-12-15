@@ -32,6 +32,10 @@ _HOC - HIGHER ORDER COMPONENTs_
 
 - SessionProvider from "next-auth/react" is an example of the use of a HOC component (Higher Order Component). The SessionProvider manages authentication and login states, and WRAPS OUR WHOLE SITE allowing the user to persist the logged in state navigating through the app.
 
+_MIDDLEWARE IN NEXT.JS_
+
+- Middleware is integrated into NextJS 12, doesn't needed to be built.
+
 ### Learning about NVM to control what node version you are running on when installing dependencies in your projects.
 
 Many times I have run into issues with Node versions when installing dependencies.<br>
