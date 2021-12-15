@@ -17,4 +17,13 @@ Built with a Next.js + Tailwind CSS starter.
 - Middleware and Next-auth
 - TailwindCSS for quick prototyping
 
-## Preview
+### NextAuth V4
+
+- Handles user login states
+- Refresh tokens
+
+### Learning about NVM to control what node version you are running on when installing dependencies.
+
+- Many times I have run into issues with Node versions when installing dependencies.
+- nmv - Node Version Manager, gives you the ability to change the node -v you run on projects.
+- I highly recommend reading about it : [nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
