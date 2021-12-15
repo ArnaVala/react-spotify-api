@@ -1,8 +1,11 @@
 import { useSession } from "next-auth/react"
 import { ChevronDownIcon } from "@heroicons/react/outline"
+import { useState, useEffect } from 'react'
+import { shuffle } from 'lodash' //for randomizing/shuffling colors
 
 /* using randomized colors for the header component from the color array
 and use useEffect
+using string-interpolation in the className ${color} in the section
 */
 const colors = [
   "from-indigo-500",
@@ -19,22 +22,23 @@ function Center() {
   const [color, setColor] = useState(null); // creating a state for the changing colors in header
   //initial state is none - as soon as we mount a random color will be rendered.
   useEffect(() => {
-
-  })
+    setColor(shuffle(colors).pop()) //setColor on mount - shuffle colors and 'pop' one in
+  }, []) //
 
   return (
     <div className="flex-grow">
       <header className="absolute top-5 right-8">
         <div className="flex items-center  bg-red-300 space-x-3 opacity-90 hover:opacity-80 cursor-pointer rounded-full p-1 pr-2">
           <img
-            className="rounded-full w-10 h-10"
             src={session?.user.image}
-            alt={session?.user.name}/>
+            alt={session?.user.name}
+            className="rounded-full w-10 h-10"
+          />
            <h2 className="text-white">{session?.user.name}</h2>
            <ChevronDownIcon className="h-5 w-5" />
         </div>
       </header>
-      <section className={`flex items-end space-x-7 bg-gradient-to-b to-black from-red-500 h-80 text-white p-8`}>
+      <section className={`flex items-end space-x-7 bg-gradient-to-b to-black ${color} h-80 text-white p-8`}>
         <h3>hello</h3>
       </section>
     </div>
