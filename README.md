@@ -1,17 +1,20 @@
-# Next.js + Tailwind CSS Example
+# Spotify API clone
 
-Built with a Next.js + Tailwind CSS starter
+I did this project from a [this tutorial](https://www.youtube.com/watch?v=3xrko3GpYoU&t=3571s) to better get to understand
+Next.js 12, Middlewar and how to handle authenticated user access, as well as state management.
+
+Because I wanted to focus on learning Next/React and Hooks, rather than styling, I decided not to use CSS modules or styled-components,
+but used TailwindCSS, so I could get it up fast.
+
+## Stack
+
+Built with a Next.js + Tailwind CSS starter.
+
+- Spotify API
+- NextJS
+- Hooks, using Recoil
+- Spotify API
+- Middleware and Next-auth
+- TailwindCSS for quick prototyping
 
 ## Preview
-
-Preview the example live on [StackBlitz](http://stackblitz.com/):
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-tailwindcss)
-
-## Deploy your own
-
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss&project-name=with-tailwindcss&repository-name=with-tailwindcss)
-
-## How to use
