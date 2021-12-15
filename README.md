@@ -10,7 +10,7 @@ but used TailwindCSS, so I could get it up fast.
 
 Built with a Next.js + Tailwind CSS starter.
 
-- Spotify API
+- Spotify API and spotify-web-api-node package
 - NextJS
 - Hooks, using Recoil
 - Spotify API
@@ -19,8 +19,14 @@ Built with a Next.js + Tailwind CSS starter.
 
 ### NextAuth V4
 
-- Handles user login states
-- Refresh tokens
+- Documentation on [NextAuth](https://next-auth.js.org/getting-started/example#add-api-route)
+- Create a env.local file in the root folder and add the credentials.
+- In the .env.local file you need these keys. NEXTAUTH_URL needs to be changed when deployed.
+  <br>
+  NEXTAUTH_URL=http://localhost:3000
+  NEXT_PUBLIC_CLIENT_SECRET=your
+  NEXT_PUBLIC_CLIENT_ID=
+  JWT_SECRET=secret_value_here
 
 ### Learning about NVM to control what node version you are running on when installing dependencies.
 
