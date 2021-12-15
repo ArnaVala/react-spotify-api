@@ -1,23 +1,23 @@
 # Spotify API clone
 
-I did this project from a [this tutorial](https://www.youtube.com/watch?v=3xrko3GpYoU&t=3571s) to better get to understand
-Next.js 12, Middlewar and how to handle authenticated user access, as well as state management.
-
-Because I wanted to focus on learning Next/React and Hooks, rather than styling, I decided not to use CSS modules or styled-components,
-but used TailwindCSS, so I could get it up fast.
+I did this project from a code-a-long with Sonny Sangha in [this tutorial](https://www.youtube.com/watch?v=3xrko3GpYoU&t=3571s) to better get to understand Next.js 12, Middlewar and how to handle authenticated user access, as well as state management.
+<br>
+Sonny is b.t.w. one of the best online 'teachers' I have followed. He explains really well each step along the way, so that you actually get a very good understanding of the concepts, and what the functions/methods are doing. The projects he does are really high quality, and he really adhers to best practices.
+<br>
 
 ## Stack
 
 Built with a Next.js + Tailwind CSS starter.
+I wanted to dive deep into understanding NextJS and Hooks - rather than styling, I decided not to use CSS modules or styled-components, but used TailwindCSS, so I could get it up fast and focus on the functional stuff.
 
 - Spotify API and spotify-web-api-node package
 - NextJS
 - Hooks, using Recoil
 - Spotify API
 - Middleware and Next-auth
-- TailwindCSS for quick prototyping
+- TailwindCSS for quick styling of the app.
 
-### NextAuth V4
+### NextAuth v4
 
 - Documentation on [NextAuth](https://next-auth.js.org/getting-started/example#add-api-route)
 - Create a env.local file in the root folder and add the credentials.
@@ -28,8 +28,13 @@ Built with a Next.js + Tailwind CSS starter.
   NEXT_PUBLIC_CLIENT_ID=
   JWT_SECRET=secret_value_here
 
-### Learning about NVM to control what node version you are running on when installing dependencies.
+_HOC - HIGHER ORDER COMPONENTs_
 
-- Many times I have run into issues with Node versions when installing dependencies.
-- nmv - Node Version Manager, gives you the ability to change the node -v you run on projects.
+- SessionProvider from "next-auth/react" is an example of the use of a HOC component (Higher Order Component). The SessionProvider manages authentication and login states, and WRAPS OUR WHOLE SITE allowing the user to persist the logged in state navigating through the app.
+
+### Learning about NVM to control what node version you are running on when installing dependencies in your projects.
+
+Many times I have run into issues with Node versions when installing dependencies.<br>
+_nmv_ - Node Version Manager, gives you the ability to change the node -v you run on projects.
+
 - I highly recommend reading about it : [nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
