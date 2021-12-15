@@ -2,12 +2,11 @@ import { useSession } from "next-auth/react"
 import { ChevronDownIcon } from "@heroicons/react/outline"
 import { useState, useEffect } from 'react'
 import { shuffle } from 'lodash' //for randomizing/shuffling colors
-import { useRecoilState } from 'recoil';
-import { playlistIdState } from '../atoms/playlistAtom'
+import { useRecoilState, useRecoilValue } from 'recoil';
+import { playlistIdState, playlistState } from '../atoms/playlistAtom'
 
 /* using randomized colors for the header component from the color array
-and use useEffect
-using string-interpolation in the className ${color} in the section
+and use useEffect using string-interpolation in the className ${color} in the section
 */
 const colors = [
   "from-indigo-500",
@@ -21,16 +20,26 @@ const colors = [
 
 function Center() {
   const { data: session } = useSession(); // using the useSession hook for getting data
+  const spotifyApi = useSpotify();
   const [color, setColor] = useState(null); // creating a state for the changing colors in header
   //initial state is none - as soon as we mount a random color will be rendered.
   //const [playlistId, setPlaylistId] = useRecoilState(playlistIdState); // use this to render the playlist data to the dom
   
   // instead of the above we can create a variable with useRecoilValue(), and pass the variable into the useEffect
   const playlistId = useRecoilValue(playlistIdState); 
+  const [playlist, setPlaylist] = useRecoilState(playlistState);
 
   useEffect(() => {
     setColor(shuffle(colors).pop()) //setColor on mount - shuffle colors and 'pop' one in
-  }, [playlistId]); //
+  }, [playlistId]); //now if we click a item in the playlist, the color also changes in the header.
+
+  useEffect(() => {
+    spotifyApi.getPlaylist(playlistId)
+      .then((data) => {
+        setPlaylist(data.body);
+      })
+      .catch((err) => console.log("Something isn't right!", err));
+  }, [spotifyApi, playlistId]);
 
   return (
     <div className="flex-grow">
