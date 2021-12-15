@@ -1,4 +1,4 @@
-import { getToken } from "next-auth/react"
+import { getToken } from "next-auth/jwt"
 import { NextResponse } from 'next/server'
 // Middleware is between the client and serverside render - especially important in e.g. user auth - when e.g. retrieving login details.
 
