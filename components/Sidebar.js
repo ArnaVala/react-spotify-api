@@ -30,10 +30,12 @@ function Sidebar() {
     }
   }, [session, spotifyApi]);
 
-  console.log('you picked', playlistId); // we have stored it at this point into localState, now we have to use
+  //console.log('you picked', playlistId); // we have stored it at this point into localState, now we have to use
   
   return (
-    <div className="text-gray-500 p-5 text-sm border-r border-gray-900 overflow-y-scroll scrollbar-hide h-screen">
+    <div className="text-gray-500 p-9 font-bold text-xs lg:text-sm border-r border-gray-900
+     overflow-y-scroll scrollbar-hide h-screen sm:max-w-[15rem] lg:max-w-[18rem] hidden md:inline-flex
+     pb-36">
       <div className="space-y-4">
         
         {/*<!-- temporary logout -->*/}

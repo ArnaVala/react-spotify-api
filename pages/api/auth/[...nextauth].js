@@ -1,5 +1,5 @@
 import NextAuth from "next-auth"
-import SpotifyProvider from "next-auth/providers/spotify"
+import spotifyProvider from "next-auth/providers/spotify"
 import spotifyApi, { LOGIN_URL } from '../../../lib/spotify'
 
 // USER AUTHENTICATION - LOGIN - TOKENS
@@ -15,7 +15,7 @@ async function refreshAccessToken(token) {
     return {
       ...token,
       accessToken: refreshedToken.access_token,
-      accessTokenExpires: Date.now + refreshedToken.expires_in * 1000, // = 1 hour = 3600 from spotifyAPI
+      accessTokenExpires: Date.now + refreshedToken.expires_in * 2000, // = 1 hour = 3600 from spotifyAPI
       refreshToken: refreshedToken.refresh_token ?? token.refreshToken,
       // if the refresh token exists then use it - otherwise fall back to the old refresh token
     }
@@ -34,7 +34,7 @@ async function refreshAccessToken(token) {
 export default NextAuth({
   // Configure one or more authentication providers
   providers: [
-    SpotifyProvider({
+    spotifyProvider({
       clientId: process.env.NEXT_PUBLIC_CLIENT_ID,
       clientSecret: process.env.NEXT_PUBLIC_CLIENT_SECRET,
       authorization: LOGIN_URL,
